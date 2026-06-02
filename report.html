@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>지선예측 2026 — 서울특별시</title>
+<style>
+  *,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
+  body { font-family:-apple-system,BlinkMacSystemFont,'Noto Sans KR',sans-serif;
+         background:#f5f4f0; color:#1a1a18; padding:32px 16px; }
+  .container { max-width:860px; margin:0 auto; display:flex; flex-direction:column; gap:16px; }
+  .header { background:#fff; border:1px solid rgba(0,0,0,.1); border-radius:12px; padding:20px 24px; }
+  .eyebrow { font-size:11px; text-transform:uppercase; letter-spacing:.06em; color:#9a9892; margin-bottom:6px; }
+  .title { font-size:22px; font-weight:700; margin-bottom:4px; letter-spacing:-.5px; }
+  .subtitle { font-size:13px; color:#5a5a56; margin-bottom:16px; }
+  .prob-bar { height:32px; border-radius:6px; overflow:hidden; display:flex; margin-bottom:8px; }
+  .seg-a { background:#378ADD; color:#E6F1FB; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:700; }
+  .seg-b { background:#E24B4A; color:#FCEBEB; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:700; }
+  .prob-labels { display:flex; justify-content:space-between; font-size:11px; color:#9a9892; margin-bottom:14px; }
+  .pred-box { padding:12px 16px; border-radius:8px; background:#EAF3DE; border-left:3px solid #639922;
+              font-size:14px; font-weight:600; color:#27500A; }
+  .metrics { display:grid; grid-template-columns:repeat(4,1fr); gap:10px; }
+  @media(max-width:600px){.metrics{grid-template-columns:repeat(2,1fr)}}
+  .mcard { background:#fff; border:1px solid rgba(0,0,0,.1); border-radius:10px; padding:14px 16px; }
+  .mc-label { font-size:11px; color:#9a9892; margin-bottom:5px; }
+  .mc-value { font-size:20px; font-weight:700; letter-spacing:-.5px; line-height:1; }
+  .mc-sub { font-size:10px; color:#5a5a56; margin-top:3px; }
+  .card { background:#fff; border:1px solid rgba(0,0,0,.1); border-radius:12px; overflow:hidden; }
+  .card-head { padding:12px 20px; border-bottom:.5px solid rgba(0,0,0,.08); font-size:12px;
+               font-weight:600; color:#5a5a56; background:#faf9f6; display:flex; justify-content:space-between; }
+  .card-body { padding:16px 20px; }
+  .tag { font-size:9px; padding:2px 7px; border-radius:10px; background:#f0eeea; color:#9a9892; }
+  .two-col { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+  @media(max-width:600px){.two-col{grid-template-columns:1fr}}
+  .sent-row { display:flex; align-items:center; gap:10px; margin-bottom:10px; }
+  .sent-name { font-size:12px; font-weight:600; min-width:60px; }
+  .sent-track { flex:1; height:10px; background:#f0eeea; border-radius:5px; overflow:hidden; display:flex; }
+  .sent-pos { background:#639922; height:100%; }
+  .sent-neg { background:#E24B4A; height:100%; }
+  .sent-pct { font-size:11px; color:#9a9892; min-width:36px; text-align:right; }
+  .footer { font-size:10px; color:#9a9892; text-align:center; padding:8px 0; line-height:1.6; }
+  .vs-row { display:flex; align-items:center; gap:8px; font-size:11px; color:#5a5a56; margin-bottom:6px; }
+  .vs-label { min-width:70px; color:#9a9892; }
+  .vs-track { flex:1; height:8px; background:#f0eeea; border-radius:4px; overflow:hidden; display:flex; }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="header">
+    <div class="eyebrow">지선예측 2026 · 여론 기반 분석 (언급량 + 감성)</div>
+    <div class="title">서울특별시 광역단체장 선거</div>
+    <div class="subtitle">김민준 vs 이서연 · 유튜브 공중파 댓글 + 네이버 뉴스 기반</div>
+
+    <div class="prob-bar">
+      <div class="seg-a" style="width:57.3%">김민준 57.3%</div>
+      <div class="seg-b" style="width:42.7%">이서연 42.7%</div>
+    </div>
+    <div class="prob-labels">
+      <span>← 김민준 우세</span><span>이서연 우세 →</span>
+    </div>
+    <div class="pred-box">📊 김민준이 57.3% 확률로 우세합니다.</div>
+  </div>
+
+  <div class="metrics">
+    <div class="mcard">
+      <div class="mc-label">댓글 언급량</div>
+      <div class="mc-value">84 : 83</div>
+      <div class="mc-sub">김민준 : 이서연</div>
+    </div>
+    <div class="mcard">
+      <div class="mc-label">뉴스 기사수</div>
+      <div class="mc-value">100 : 100</div>
+      <div class="mc-sub">김민준 : 이서연</div>
+    </div>
+    <div class="mcard">
+      <div class="mc-label">댓글 긍정률 (김민준)</div>
+      <div class="mc-value" style="color:#3B6D11">71.4%</div>
+      <div class="mc-sub">유튜브 공중파</div>
+    </div>
+    <div class="mcard">
+      <div class="mc-label">판세</div>
+      <div class="mc-value" style="font-size:16px">A 우세</div>
+      <div class="mc-sub">격차 14.6%p</div>
+    </div>
+  </div>
+
+  <div class="two-col">
+    <div class="card">
+      <div class="card-head">유튜브 댓글 감성 <span class="tag">공중파 채널</span></div>
+      <div class="card-body">
+        <div class="sent-row">
+          <div class="sent-name" style="color:#185FA5">김민준</div>
+          <div class="sent-track">
+            <div class="sent-pos" style="width:71.4%"></div>
+            <div class="sent-neg" style="width:16.7%"></div>
+          </div>
+          <div class="sent-pct">71.4%</div>
+        </div>
+        <div class="sent-row">
+          <div class="sent-name" style="color:#A32D2D">이서연</div>
+          <div class="sent-track">
+            <div class="sent-pos" style="width:43.4%"></div>
+            <div class="sent-neg" style="width:41.0%"></div>
+          </div>
+          <div class="sent-pct">43.4%</div>
+        </div>
+        <div style="font-size:10px;color:#9a9892;margin-top:8px">
+          채널 가중치 + 좋아요 수 반영
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-head">뉴스 감성 <span class="tag">네이버 뉴스</span></div>
+      <div class="card-body">
+        <div class="sent-row">
+          <div class="sent-name" style="color:#185FA5">김민준</div>
+          <div class="sent-track">
+            <div class="sent-pos" style="width:73.0%"></div>
+            <div class="sent-neg" style="width:27.0%"></div>
+          </div>
+          <div class="sent-pct">73.0%</div>
+        </div>
+        <div class="sent-row">
+          <div class="sent-name" style="color:#A32D2D">이서연</div>
+          <div class="sent-track">
+            <div class="sent-pos" style="width:45.0%"></div>
+            <div class="sent-neg" style="width:55.0%"></div>
+          </div>
+          <div class="sent-pct">45.0%</div>
+        </div>
+        <div style="font-size:10px;color:#9a9892;margin-top:8px">
+          김민준 추세 -0.00 · 이서연 추세 +0.00
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-head">가중치 구성 <span class="tag">종합 점수 모델</span></div>
+    <div class="card-body">
+      <div class="vs-row"><div class="vs-label">댓글 감성</div><div class="vs-track"><div style="width:35%;background:#7F77DD;height:100%"></div></div><span style="font-size:10px;color:#9a9892">35%</span></div>
+      <div class="vs-row"><div class="vs-label">뉴스 감성</div><div class="vs-track"><div style="width:30%;background:#7F77DD;height:100%"></div></div><span style="font-size:10px;color:#9a9892">30%</span></div>
+      <div class="vs-row"><div class="vs-label">언급량</div><div class="vs-track"><div style="width:20%;background:#7F77DD;height:100%"></div></div><span style="font-size:10px;color:#9a9892">20%</span></div>
+      <div class="vs-row"><div class="vs-label">뉴스 추세</div><div class="vs-track"><div style="width:15%;background:#7F77DD;height:100%"></div></div><span style="font-size:10px;color:#9a9892">15%</span></div>
+    </div>
+  </div>
+
+  <div class="two-col">
+    <div class="card">
+      <div class="card-head">김민준 키워드</div>
+      <div class="card-body" style="line-height:2"><span style="font-size:19px;padding:3px 9px;background:#f0eeea;border-radius:12px;color:#5a5a56;margin:2px;display:inline-block">김민준</span><span style="font-size:15px;padding:3px 9px;background:#f0eeea;border-radius:12px;color:#5a5a56;margin:2px;display:inline-block">정책</span><span style="font-size:15px;padding:3px 9px;background:#f0eeea;border-radius:12px;color:#5a5a56;margin:2px;display:inline-block">방향은</span><span style="font-size:15px;padding:3px 9px;background:#f0eeea;border-radius:12px;color:#5a5a56;margin:2px;display:inline-block">맞다고</span><span style="font-size:15px;padding:3px 9px;background:#f0eeea;border-radius:12px;color:#5a5a56;margin:2px;display:inline-block">본다</span><span style="font-size:15px;padding:3px 9px;background:#f0eeea;border-radius:12px;color:#5a5a56;margin:2px;display:inline-block">김민준가</span><span style="font-size:15px;padding:3px 9px;background:#f0eeea;border-radius:12px;color:#5a5a56;margin:2px;display:inline-block">일은</span><span style="font-size:15px;padding:3px 9px;background:#f0eeea;border-radius:12px;color:#5a5a56;margin:2px;display:inline-block">않냐</span></div>
+    </div>
+    <div class="card">
+      <div class="card-head">이서연 키워드</div>
+      <div class="card-body" style="line-height:2"><span style="font-size:19px;padding:3px 9px;background:#f0eeea;border-radius:12px;color:#5a5a56;margin:2px;display:inline-block">이서연</span><span style="font-size:14px;padding:3px 9px;background:#f0eeea;border-radius:12px;color:#5a5a56;margin:2px;display:inline-block">이번엔</span><span style="font-size:13px;padding:3px 9px;background:#f0eeea;border-radius:12px;color:#5a5a56;margin:2px;display:inline-block">실망이다</span><span style="font-size:13px;padding:3px 9px;background:#f0eeea;border-radius:12px;color:#5a5a56;margin:2px;display:inline-block">소리</span><span style="font-size:13px;padding:3px 9px;background:#f0eeea;border-radius:12px;color:#5a5a56;margin:2px;display:inline-block">믿음이</span><span style="font-size:13px;padding:3px 9px;background:#f0eeea;border-radius:12px;color:#5a5a56;margin:2px;display:inline-block">간다</span><span style="font-size:13px;padding:3px 9px;background:#f0eeea;border-radius:12px;color:#5a5a56;margin:2px;display:inline-block">뽑아야겠다</span><span style="font-size:13px;padding:3px 9px;background:#f0eeea;border-radius:12px;color:#5a5a56;margin:2px;display:inline-block">공약이</span></div>
+    </div>
+  </div>
+
+  <div class="footer">
+    지선예측 2026 · 생성 2026-06-02 09:50<br>
+    ⚠ 여론(댓글·뉴스) 기반 분석은 플랫폼 사용자층 편향이 있어 실제 득표율과 다를 수 있습니다.
+  </div>
+
+</div>
+</body>
+</html>

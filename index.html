@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>지선예측 2026 — 전국 판세</title>
+<style>
+  *,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
+  body { font-family:-apple-system,BlinkMacSystemFont,'Noto Sans KR',sans-serif;
+         background:#f5f4f0; color:#1a1a18; padding:32px 16px; }
+  .container { max-width:900px; margin:0 auto; }
+  .header { background:#fff; border:1px solid rgba(0,0,0,.1); border-radius:12px; padding:20px 24px; margin-bottom:16px; }
+  .eyebrow { font-size:11px; text-transform:uppercase; letter-spacing:.06em; color:#9a9892; margin-bottom:6px; }
+  .title { font-size:22px; font-weight:700; letter-spacing:-.5px; }
+  .summary { display:flex; gap:20px; margin-top:14px; font-size:13px; }
+  .sm-item { display:flex; align-items:center; gap:6px; }
+  .dot { width:10px; height:10px; border-radius:2px; }
+  .layout { display:grid; grid-template-columns:1fr 280px; gap:16px; }
+  @media(max-width:680px){.layout{grid-template-columns:1fr}}
+  .map-card, .list-card { background:#fff; border:1px solid rgba(0,0,0,.1); border-radius:12px; padding:16px; }
+  .region { cursor:pointer; transition:opacity .15s; }
+  .region:hover { opacity:.72; }
+  .legend { display:flex; gap:10px; flex-wrap:wrap; margin-top:10px; font-size:10px; color:#5a5a56; }
+  .lg { display:flex; align-items:center; gap:4px; }
+  .lg-sw { width:12px; height:9px; border-radius:2px; }
+  .list-title { font-size:12px; font-weight:600; color:#5a5a56; margin-bottom:10px; }
+  .region-row { display:flex; align-items:center; padding:8px 6px; border-bottom:.5px solid rgba(0,0,0,.06);
+                text-decoration:none; transition:background .12s; }
+  .region-row:hover { background:#faf9f6; }
+  .rr-name { flex:1; font-size:12px; color:#1a1a18; }
+  .rr-winner { font-size:11px; font-weight:600; margin-right:8px; }
+  .rr-prob { font-size:11px; color:#9a9892; min-width:38px; text-align:right; }
+  .footer { font-size:10px; color:#9a9892; text-align:center; padding:14px 0; line-height:1.6; }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="header">
+    <div class="eyebrow">지선예측 2026 · 여론 기반 분석 (유튜브 댓글 + 네이버 뉴스)</div>
+    <div class="title">전국 광역단체장 선거 판세</div>
+    <div class="summary">
+      <div class="sm-item"><div class="dot" style="background:#378ADD"></div>A계열 우세 5곳</div>
+      <div class="sm-item"><div class="dot" style="background:#E24B4A"></div>B계열 우세 5곳</div>
+      <div class="sm-item"><div class="dot" style="background:#EF9F27"></div>경합 6곳</div>
+    </div>
+  </div>
+
+  <div class="layout">
+    <div class="map-card">
+      <svg width="100%" viewBox="0 0 420 470" xmlns="http://www.w3.org/2000/svg">
+        <a href="report_gangwon.html"><g class="region"><path d="M200,58 L265,52 L296,68 L300,112 L272,133 L242,128 L212,117 L196,92 Z" fill="#378ADD" stroke="#fff" stroke-width="2"/><text x="245" y="96" text-anchor="middle" font-size="10" fill="#fff" font-weight="600" pointer-events="none">강원</text></g></a>
+<a href="report_gyeonggi.html"><g class="region"><path d="M128,94 L196,90 L212,117 L202,148 L175,163 L145,158 L118,142 L114,116 Z" fill="#F09595" stroke="#fff" stroke-width="2"/><text x="162" y="133" text-anchor="middle" font-size="10" fill="#1a1a18" font-weight="600" pointer-events="none">경기</text></g></a>
+<a href="report_seoul.html"><g class="region"><path d="M148,108 L170,105 L174,122 L150,125 Z" fill="#378ADD" stroke="#fff" stroke-width="2"/><text x="162" y="117" text-anchor="middle" font-size="10" fill="#fff" font-weight="600" pointer-events="none">서울</text></g></a>
+<a href="report_incheon.html"><g class="region"><path d="M110,112 L130,110 L132,126 L112,128 Z" fill="#F09595" stroke="#fff" stroke-width="2"/><text x="100" y="120" text-anchor="middle" font-size="10" fill="#1a1a18" font-weight="600" pointer-events="none">인천</text></g></a>
+<a href="report_chungnam.html"><g class="region"><path d="M112,157 L145,157 L152,188 L138,213 L105,208 L93,182 Z" fill="#EF9F27" stroke="#fff" stroke-width="2"/><text x="121" y="188" text-anchor="middle" font-size="10" fill="#1a1a18" font-weight="600" pointer-events="none">충남</text></g></a>
+<a href="report_sejong.html"><g class="region"><path d="M148,165 L162,162 L165,175 L150,178 Z" fill="#EF9F27" stroke="#fff" stroke-width="2"/><text x="156" y="172" text-anchor="middle" font-size="10" fill="#1a1a18" font-weight="600" pointer-events="none">세종</text></g></a>
+<a href="report_chungbuk.html"><g class="region"><path d="M176,142 L212,136 L222,162 L212,188 L186,192 L164,178 L162,158 Z" fill="#F09595" stroke="#fff" stroke-width="2"/><text x="194" y="168" text-anchor="middle" font-size="10" fill="#1a1a18" font-weight="600" pointer-events="none">충북</text></g></a>
+<a href="report_daejeon.html"><g class="region"><path d="M154,188 L172,185 L174,200 L155,203 Z" fill="#378ADD" stroke="#fff" stroke-width="2"/><text x="140" y="210" text-anchor="middle" font-size="10" fill="#fff" font-weight="600" pointer-events="none">대전</text></g></a>
+<a href="report_gyeongbuk.html"><g class="region"><path d="M242,128 L300,112 L314,143 L308,184 L278,204 L247,198 L226,173 L222,142 Z" fill="#F09595" stroke="#fff" stroke-width="2"/><text x="268" y="163" text-anchor="middle" font-size="10" fill="#1a1a18" font-weight="600" pointer-events="none">경북</text></g></a>
+<a href="report_daegu.html"><g class="region"><path d="M248,188 L267,185 L270,202 L250,205 Z" fill="#378ADD" stroke="#fff" stroke-width="2"/><text x="258" y="196" text-anchor="middle" font-size="10" fill="#fff" font-weight="600" pointer-events="none">대구</text></g></a>
+<a href="report_jeonbuk.html"><g class="region"><path d="M93,214 L138,213 L152,238 L143,270 L110,275 L86,253 L84,228 Z" fill="#EF9F27" stroke="#fff" stroke-width="2"/><text x="114" y="246" text-anchor="middle" font-size="10" fill="#1a1a18" font-weight="600" pointer-events="none">전북</text></g></a>
+<a href="report_gyeongnam.html"><g class="region"><path d="M226,212 L278,204 L304,224 L298,260 L266,274 L235,272 L214,248 L218,222 Z" fill="#F09595" stroke="#fff" stroke-width="2"/><text x="258" y="242" text-anchor="middle" font-size="10" fill="#1a1a18" font-weight="600" pointer-events="none">경남</text></g></a>
+<a href="report_ulsan.html"><g class="region"><path d="M292,202 L313,200 L318,223 L296,228 Z" fill="#F09595" stroke="#fff" stroke-width="2"/><text x="305" y="215" text-anchor="middle" font-size="10" fill="#1a1a18" font-weight="600" pointer-events="none">울산</text></g></a>
+<a href="report_busan.html"><g class="region"><path d="M268,262 L298,258 L300,278 L270,282 Z" fill="#E24B4A" stroke="#fff" stroke-width="2"/><text x="285" y="270" text-anchor="middle" font-size="10" fill="#fff" font-weight="600" pointer-events="none">부산</text></g></a>
+<a href="report_gwangju_jeonnam.html"><g class="region"><path d="M86,275 L143,270 L158,285 L160,298 L150,328 L118,344 L83,330 L73,298 Z" fill="#85B7EB" stroke="#fff" stroke-width="2"/><text x="116" y="308" text-anchor="middle" font-size="10" fill="#1a1a18" font-weight="600" pointer-events="none">전남·광주</text></g></a>
+<a href="report_jeju.html"><g class="region"><ellipse cx="118" cy="420" rx="46" ry="24" fill="#EF9F27" stroke="#fff" stroke-width="2"/><text x="118" y="420" text-anchor="middle" font-size="10" fill="#1a1a18" font-weight="600" pointer-events="none">제주</text></g></a>
+        <text x="210" y="455" text-anchor="middle" font-size="9" fill="#aaa">※ 지역을 클릭하면 상세 분석으로 이동 · 지도는 모식도</text>
+      </svg>
+      <div class="legend">
+        <div class="lg"><div class="lg-sw" style="background:#378ADD"></div>A 강세</div>
+        <div class="lg"><div class="lg-sw" style="background:#85B7EB"></div>A 약세</div>
+        <div class="lg"><div class="lg-sw" style="background:#EF9F27"></div>경합</div>
+        <div class="lg"><div class="lg-sw" style="background:#F09595"></div>B 약세</div>
+        <div class="lg"><div class="lg-sw" style="background:#E24B4A"></div>B 강세</div>
+      </div>
+    </div>
+
+    <div class="list-card">
+      <div class="list-title">우세 확률 순</div>
+      
+        <a href="report_daegu.html" class="region-row">
+          <span class="rr-name">대구광역시</span>
+          <span class="rr-winner" style="color:#185FA5">김대구</span>
+          <span class="rr-prob">57.5%</span>
+        </a>
+        <a href="report_daejeon.html" class="region-row">
+          <span class="rr-name">대전광역시</span>
+          <span class="rr-winner" style="color:#185FA5">김대전</span>
+          <span class="rr-prob">57.3%</span>
+        </a>
+        <a href="report_busan.html" class="region-row">
+          <span class="rr-name">부산광역시</span>
+          <span class="rr-winner" style="color:#A32D2D">이부산</span>
+          <span class="rr-prob">56.8%</span>
+        </a>
+        <a href="report_gangwon.html" class="region-row">
+          <span class="rr-name">강원특별자치도</span>
+          <span class="rr-winner" style="color:#185FA5">김강원</span>
+          <span class="rr-prob">56.4%</span>
+        </a>
+        <a href="report_seoul.html" class="region-row">
+          <span class="rr-name">서울특별시</span>
+          <span class="rr-winner" style="color:#185FA5">김서울</span>
+          <span class="rr-prob">55.8%</span>
+        </a>
+        <a href="report_gwangju_jeonnam.html" class="region-row">
+          <span class="rr-name">전남광주통합특별시</span>
+          <span class="rr-winner" style="color:#185FA5">강기정</span>
+          <span class="rr-prob">54.7%</span>
+        </a>
+        <a href="report_chungbuk.html" class="region-row">
+          <span class="rr-name">충청북도</span>
+          <span class="rr-winner" style="color:#A32D2D">이충북</span>
+          <span class="rr-prob">54.3%</span>
+        </a>
+        <a href="report_gyeongnam.html" class="region-row">
+          <span class="rr-name">경상남도</span>
+          <span class="rr-winner" style="color:#A32D2D">이경남</span>
+          <span class="rr-prob">54.1%</span>
+        </a>
+        <a href="report_incheon.html" class="region-row">
+          <span class="rr-name">인천광역시</span>
+          <span class="rr-winner" style="color:#A32D2D">이인천</span>
+          <span class="rr-prob">53.9%</span>
+        </a>
+        <a href="report_gyeonggi.html" class="region-row">
+          <span class="rr-name">경기도</span>
+          <span class="rr-winner" style="color:#A32D2D">이경기</span>
+          <span class="rr-prob">53.1%</span>
+        </a>
+        <a href="report_ulsan.html" class="region-row">
+          <span class="rr-name">울산광역시</span>
+          <span class="rr-winner" style="color:#854F0B">이울산</span>
+          <span class="rr-prob">52.7%</span>
+        </a>
+        <a href="report_gyeongbuk.html" class="region-row">
+          <span class="rr-name">경상북도</span>
+          <span class="rr-winner" style="color:#854F0B">이경북</span>
+          <span class="rr-prob">52.6%</span>
+        </a>
+        <a href="report_jeonbuk.html" class="region-row">
+          <span class="rr-name">전북특별자치도</span>
+          <span class="rr-winner" style="color:#854F0B">이전북</span>
+          <span class="rr-prob">52.4%</span>
+        </a>
+        <a href="report_sejong.html" class="region-row">
+          <span class="rr-name">세종특별자치시</span>
+          <span class="rr-winner" style="color:#854F0B">이세종</span>
+          <span class="rr-prob">51.4%</span>
+        </a>
+        <a href="report_jeju.html" class="region-row">
+          <span class="rr-name">제주특별자치도</span>
+          <span class="rr-winner" style="color:#854F0B">이제주</span>
+          <span class="rr-prob">51.3%</span>
+        </a>
+        <a href="report_chungnam.html" class="region-row">
+          <span class="rr-name">충청남도</span>
+          <span class="rr-winner" style="color:#854F0B">이충남</span>
+          <span class="rr-prob">50.8%</span>
+        </a>
+    </div>
+  </div>
+
+  <div class="footer">
+    지선예측 2026 · 생성 2026-06-02 10:25<br>
+    ⚠ 여론(댓글·뉴스) 기반 분석은 플랫폼 편향이 있어 실제 득표율과 다를 수 있습니다.
+  </div>
+
+</div>
+</body>
+</html>
